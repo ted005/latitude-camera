@@ -24,6 +24,7 @@
     _picker = [self.storyboard instantiateViewControllerWithIdentifier:@"Camera"];
     _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     _picker.showsCameraControls = NO;
+    _picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
     
     //add auto layout manually
     _picker.view.frame = CGRectMake(0, 0, 400, 850);
@@ -33,16 +34,30 @@
 
 - (IBAction)shoot:(UIButton *)sender {
     NSLog(@"shoot.......");
+    [_picker takePicture];
     
 }
 - (IBAction)toggleFlash:(UIButton *)sender {
     NSLog(@"flash.......");
+//    _picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModeVideo;
+    if (_picker.cameraFlashMode == UIImagePickerControllerCameraFlashModeOff) {
+        _picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOn;
+    } else {
+        _picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+    }
+//    _picker.cameraCaptureMode = UIImagePickerControllerCameraCaptureModePhoto;
 }
 - (IBAction)toggleFrontCamera:(UIButton *)sender {
     NSLog(@"front.......");
+    if (_picker.cameraDevice == UIImagePickerControllerCameraDeviceRear) {
+        _picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+    } else {
+        _picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+    }
 }
 - (IBAction)showPhoto:(UIButton *)sender {
     NSLog(@"showPhoto.......");
+//    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
 - (IBAction)showTemplate:(UIButton *)sender {
     NSLog(@"showTemplate.......");
@@ -52,6 +67,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    NSLog(@"did finish......");
 }
 
 @end
