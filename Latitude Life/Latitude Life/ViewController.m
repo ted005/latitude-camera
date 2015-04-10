@@ -49,11 +49,25 @@
 }
 - (IBAction)toggleFrontCamera:(UIButton *)sender {
     NSLog(@"front.......");
-    if (_picker.cameraDevice == UIImagePickerControllerCameraDeviceRear) {
-        _picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
-    } else {
-        _picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-    }
+    
+    [UIView beginAnimations:@"Animation1" context:nil];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
+    [UIView transitionWithView:_picker.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        
+        
+        if (_picker.cameraDevice == UIImagePickerControllerCameraDeviceRear) {
+            _picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+        } else {
+            _picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+        }
+        
+    } completion:^(BOOL finished) {
+        //do nothing
+    }];
+    
+    [UIView commitAnimations];
 }
 - (IBAction)showPhoto:(UIButton *)sender {
     NSLog(@"showPhoto.......");
