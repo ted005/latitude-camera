@@ -412,6 +412,7 @@
 				DCD0B0FD1AD4214D007C47E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCD0B0FE1AD4214D007C47E4 /* Build configuration list for PBXNativeTarget "Latitude LifeTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				DCD0B1001AD4214D007C47E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

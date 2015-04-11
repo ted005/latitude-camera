@@ -12,7 +12,7 @@
 
 @property UIImagePickerController *picker;
 @property (weak, nonatomic) IBOutlet UIView *toolbar;
-
+@property UICollectionViewController *templates;
 @end
 
 @implementation ViewController
@@ -30,6 +30,7 @@
     _picker.view.frame = CGRectMake(0, 0, 400, 850);
     
     [self.view insertSubview:_picker.view atIndex:0];
+    [self.view setBackgroundColor:[UIColor blackColor]];
 }
 
 - (IBAction)shoot:(UIButton *)sender {
@@ -50,24 +51,21 @@
 - (IBAction)toggleFrontCamera:(UIButton *)sender {
     NSLog(@"front.......");
     
-    [UIView beginAnimations:@"Animation1" context:nil];
-    [UIView setAnimationDuration:0.5];
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
     
-    [UIView transitionWithView:_picker.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
-        
+    [UIView transitionWithView:_picker.view duration:1.0 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+        [_picker.view removeFromSuperview];
         
         if (_picker.cameraDevice == UIImagePickerControllerCameraDeviceRear) {
             _picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
         } else {
             _picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
         }
+        [self.view insertSubview:_picker.view atIndex:0];
         
     } completion:^(BOOL finished) {
         //do nothing
     }];
     
-    [UIView commitAnimations];
 }
 - (IBAction)showPhoto:(UIButton *)sender {
     NSLog(@"showPhoto.......");
@@ -75,6 +73,10 @@
 }
 - (IBAction)showTemplate:(UIButton *)sender {
     NSLog(@"showTemplate.......");
+    _templates = [self.storyboard instantiateViewControllerWithIdentifier:@"Templates"];
+    [_templates.view setBackgroundColor:[UIColor whiteColor]];
+    [_templates.view setFrame:CGRectMake(0, 300, 400, 100)];
+    [self presentViewController:_templates animated:YES completion:nil];
 }
 
 
