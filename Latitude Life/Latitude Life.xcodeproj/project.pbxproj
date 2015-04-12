@@ -14,6 +14,9 @@
 		DCD0B0E91AD4214D007C47E4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCD0B0E81AD4214D007C47E4 /* Images.xcassets */; };
 		DCD0B0EC1AD4214D007C47E4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCD0B0EA1AD4214D007C47E4 /* LaunchScreen.xib */; };
 		DCD0B0F81AD4214D007C47E4 /* Latitude_LifeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0F71AD4214D007C47E4 /* Latitude_LifeTests.m */; };
+		DCE13E2B1ADAA9C3000ECD50 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE13E261ADAA9C3000ECD50 /* CollectionViewController.m */; };
+		DCE13E2C1ADAA9C3000ECD50 /* LineLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE13E281ADAA9C3000ECD50 /* LineLayout.m */; };
+		DCE13E2D1ADAA9C3000ECD50 /* TemplateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE13E2A1ADAA9C3000ECD50 /* TemplateCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,12 @@
 		DCD0B0F11AD4214D007C47E4 /* Latitude LifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Latitude LifeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0F61AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0F71AD4214D007C47E4 /* Latitude_LifeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Latitude_LifeTests.m; sourceTree = "<group>"; };
+		DCE13E251ADAA9C3000ECD50 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		DCE13E261ADAA9C3000ECD50 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		DCE13E271ADAA9C3000ECD50 /* LineLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineLayout.h; sourceTree = "<group>"; };
+		DCE13E281ADAA9C3000ECD50 /* LineLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineLayout.m; sourceTree = "<group>"; };
+		DCE13E291ADAA9C3000ECD50 /* TemplateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TemplateCell.h; sourceTree = "<group>"; };
+		DCE13E2A1ADAA9C3000ECD50 /* TemplateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TemplateCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +90,12 @@
 		DCD0B0DA1AD4214D007C47E4 /* Latitude Life */ = {
 			isa = PBXGroup;
 			children = (
+				DCE13E251ADAA9C3000ECD50 /* CollectionViewController.h */,
+				DCE13E261ADAA9C3000ECD50 /* CollectionViewController.m */,
+				DCE13E271ADAA9C3000ECD50 /* LineLayout.h */,
+				DCE13E281ADAA9C3000ECD50 /* LineLayout.m */,
+				DCE13E291ADAA9C3000ECD50 /* TemplateCell.h */,
+				DCE13E2A1ADAA9C3000ECD50 /* TemplateCell.m */,
 				DCD0B0DF1AD4214D007C47E4 /* AppDelegate.h */,
 				DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */,
 				DCD0B0E21AD4214D007C47E4 /* ViewController.h */,
@@ -219,9 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE13E2B1ADAA9C3000ECD50 /* CollectionViewController.m in Sources */,
 				DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */,
 				DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */,
+				DCE13E2C1ADAA9C3000ECD50 /* LineLayout.m in Sources */,
 				DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */,
+				DCE13E2D1ADAA9C3000ECD50 /* TemplateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

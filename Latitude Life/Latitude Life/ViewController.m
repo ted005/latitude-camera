@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "CollectionViewController.h"
+#import "LineLayout.h"
 
 @interface ViewController ()
 
 @property UIImagePickerController *picker;
 @property (weak, nonatomic) IBOutlet UIView *toolbar;
-@property UICollectionViewController *templates;
+@property CollectionViewController *templates;
 @end
 
 @implementation ViewController
@@ -71,12 +73,26 @@
     NSLog(@"showPhoto.......");
 //    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
+
 - (IBAction)showTemplate:(UIButton *)sender {
     NSLog(@"showTemplate.......");
-    _templates = [self.storyboard instantiateViewControllerWithIdentifier:@"Templates"];
-    [_templates.view setBackgroundColor:[UIColor whiteColor]];
-    [_templates.view setFrame:CGRectMake(0, 300, 400, 100)];
-    [self presentViewController:_templates animated:YES completion:nil];
+    if (!sender.selected) {
+        LineLayout* lineLayout = [[LineLayout alloc] init];
+        _templates = [[CollectionViewController alloc] initWithCollectionViewLayout:lineLayout];
+        
+        //    [_templates.view setBackgroundColor:[UIColor whiteColor]];
+        //    [_templates.view setFrame:CGRectMake(0, 500, 400, 60)];
+        //    [self presentViewController:_templates animated:YES completion:nil];
+        [self.view insertSubview:_templates.collectionView aboveSubview:_picker.view];
+        sender.selected = YES;
+    } else {
+        if (_templates != nil) {
+            [_templates.collectionView removeFromSuperview];
+            sender.selected = NO;
+        }
+        
+    }
+    
 }
 
 
