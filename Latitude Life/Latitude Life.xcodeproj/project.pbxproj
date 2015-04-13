@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC007F461ADC020800959017 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F3E1ADC020800959017 /* ALView+PureLayout.m */; };
+		DC007F471ADC020800959017 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F401ADC020800959017 /* NSArray+PureLayout.m */; };
+		DC007F481ADC020800959017 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F421ADC020800959017 /* NSLayoutConstraint+PureLayout.m */; };
 		DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0DD1AD4214D007C47E4 /* main.m */; };
 		DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */; };
 		DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E31AD4214D007C47E4 /* ViewController.m */; };
@@ -30,6 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC007F3D1ADC020800959017 /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		DC007F3E1ADC020800959017 /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		DC007F3F1ADC020800959017 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		DC007F401ADC020800959017 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		DC007F411ADC020800959017 /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		DC007F421ADC020800959017 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		DC007F431ADC020800959017 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		DC007F441ADC020800959017 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		DC007F451ADC020800959017 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		DCD0B0D81AD4214D007C47E4 /* Latitude Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitude Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0DC1AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0DD1AD4214D007C47E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -69,9 +81,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC007F3C1ADC01DD00959017 /* purelayout */ = {
+			isa = PBXGroup;
+			children = (
+				DC007F3D1ADC020800959017 /* ALView+PureLayout.h */,
+				DC007F3E1ADC020800959017 /* ALView+PureLayout.m */,
+				DC007F3F1ADC020800959017 /* NSArray+PureLayout.h */,
+				DC007F401ADC020800959017 /* NSArray+PureLayout.m */,
+				DC007F411ADC020800959017 /* NSLayoutConstraint+PureLayout.h */,
+				DC007F421ADC020800959017 /* NSLayoutConstraint+PureLayout.m */,
+				DC007F431ADC020800959017 /* PureLayout.h */,
+				DC007F441ADC020800959017 /* PureLayout+Internal.h */,
+				DC007F451ADC020800959017 /* PureLayoutDefines.h */,
+			);
+			name = purelayout;
+			sourceTree = "<group>";
+		};
 		DCD0B0CF1AD4214C007C47E4 = {
 			isa = PBXGroup;
 			children = (
+				DC007F3C1ADC01DD00959017 /* purelayout */,
 				DCD0B0DA1AD4214D007C47E4 /* Latitude Life */,
 				DCD0B0F41AD4214D007C47E4 /* Latitude LifeTests */,
 				DCD0B0D91AD4214D007C47E4 /* Products */,
@@ -237,6 +266,9 @@
 				DCE13E2B1ADAA9C3000ECD50 /* CollectionViewController.m in Sources */,
 				DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */,
 				DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */,
+				DC007F461ADC020800959017 /* ALView+PureLayout.m in Sources */,
+				DC007F471ADC020800959017 /* NSArray+PureLayout.m in Sources */,
+				DC007F481ADC020800959017 /* NSLayoutConstraint+PureLayout.m in Sources */,
 				DCE13E2C1ADAA9C3000ECD50 /* LineLayout.m in Sources */,
 				DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */,
 				DCE13E2D1ADAA9C3000ECD50 /* TemplateCell.m in Sources */,
