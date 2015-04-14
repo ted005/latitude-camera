@@ -23,16 +23,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.modalPresentationStyle=UIModalPresentationOverCurrentContext;
+    
     _picker = [self.storyboard instantiateViewControllerWithIdentifier:@"Camera"];
     _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     _picker.showsCameraControls = NO;
     _picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+    _picker.view.backgroundColor = [UIColor redColor];
     
     //add auto layout manually
     _picker.view.frame = CGRectMake(0, 0, 400, 850);
     
     [self.view insertSubview:_picker.view atIndex:0];
-    [self.view setBackgroundColor:[UIColor blackColor]];
+    [self.view setBackgroundColor:[UIColor greenColor]];
 }
 
 - (IBAction)shoot:(UIButton *)sender {
@@ -105,5 +108,23 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSLog(@"did finish......");
 }
+
+//- (void)updateViewConstraints{
+//    CGRect viewFrame = CGRectMake(50.f, 10.f, 150.f, 150.f);
+//    
+////    [self.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        [_picker.view setTranslatesAutoresizingMaskIntoConstraints:NO];
+//        NSLayoutConstraint *viewTop = [NSLayoutConstraint constraintWithItem:_picker.view
+//                                                                   attribute:NSLayoutAttributeTop
+//                                                                   relatedBy:NSLayoutRelationEqual
+//                                                                      toItem:self.view
+//                                                                   attribute:NSLayoutAttributeTop
+//                                                                  multiplier:1
+//                                                                    constant:CGRectGetMinY(viewFrame)];
+//    
+//        [self.view addConstraint:viewTop];
+//    
+//    [super updateViewConstraints];
+//}
 
 @end
