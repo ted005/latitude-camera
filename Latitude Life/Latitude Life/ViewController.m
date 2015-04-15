@@ -15,6 +15,9 @@
 @property UIImagePickerController *picker;
 @property (weak, nonatomic) IBOutlet UIView *toolbar;
 @property CollectionViewController *templates;
+
+@property UIImage *image;
+
 @end
 
 @implementation ViewController
@@ -74,7 +77,18 @@
 }
 - (IBAction)showPhoto:(UIButton *)sender {
     NSLog(@"showPhoto.......");
-//    _picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeSavedPhotosAlbum]) {
+        UIImagePickerController *library = [[UIImagePickerController alloc] init];
+        library.delegate = self;
+        library.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//        library.allowsEditing = NO;
+        
+        [self presentViewController:library animated:YES completion:^{
+            //do nothing
+        }];
+    }
+    
 }
 
 - (IBAction)showTemplate:(UIButton *)sender {
@@ -107,6 +121,16 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSLog(@"did finish......");
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //show selected image
+        [_picker.view removeFromSuperview];
+        
+        UIView *img = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 500)];
+        img.backgroundColor = [UIColor redColor];
+        [self.view insertSubview:img atIndex:0];
+        
+    }];
 }
 
 //- (void)updateViewConstraints{
