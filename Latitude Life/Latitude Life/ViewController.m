@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "CollectionViewController.h"
 #import "LineLayout.h"
+#import "ShareToolbarViewController.h"
 
 @interface ViewController ()
 
@@ -122,13 +123,31 @@
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSLog(@"did finish......");
     
+    UIImage *selectedImage = [info valueForKey:UIImagePickerControllerOriginalImage];
+    
     [self dismissViewControllerAnimated:YES completion:^{
         //show selected image
         [_picker.view removeFromSuperview];
         
-        UIView *img = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 400, 500)];
-        img.backgroundColor = [UIColor redColor];
-        [self.view insertSubview:img atIndex:0];
+        UIImageView *imgView = [[UIImageView alloc] initWithImage:selectedImage];
+        
+        imgView.frame = _picker.view.frame;
+        
+        //replace camera with image
+        [_picker removeFromParentViewController];
+        [self.view insertSubview:imgView atIndex:0];
+        
+        //replace toolbar with shareToolBar
+//        UIView *shareToolbar = [[UIView alloc] initWithFrame:_toolbar.frame];
+//        shareToolbar.backgroundColor = _toolbar.backgroundColor;
+//        [_toolbar removeFromSuperview];
+//        [self.view addSubview:shareToolbar];
+        
+        ShareToolbarViewController *shareToolbar = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareToolbar"];
+        shareToolbar.view.frame = _toolbar.frame;
+        [_toolbar removeFromSuperview];
+        [self.view addSubview:shareToolbar.view];
+        
         
     }];
 }

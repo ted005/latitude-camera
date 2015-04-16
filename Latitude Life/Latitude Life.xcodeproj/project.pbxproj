@@ -10,6 +10,7 @@
 		DC007F461ADC020800959017 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F3E1ADC020800959017 /* ALView+PureLayout.m */; };
 		DC007F471ADC020800959017 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F401ADC020800959017 /* NSArray+PureLayout.m */; };
 		DC007F481ADC020800959017 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F421ADC020800959017 /* NSLayoutConstraint+PureLayout.m */; };
+		DC007F541ADFD5DC00959017 /* ShareToolbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F521ADFD5DC00959017 /* ShareToolbarViewController.m */; };
 		DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0DD1AD4214D007C47E4 /* main.m */; };
 		DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */; };
 		DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E31AD4214D007C47E4 /* ViewController.m */; };
@@ -42,6 +43,8 @@
 		DC007F431ADC020800959017 /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
 		DC007F441ADC020800959017 /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
 		DC007F451ADC020800959017 /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		DC007F511ADFD5DC00959017 /* ShareToolbarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareToolbarViewController.h; sourceTree = "<group>"; };
+		DC007F521ADFD5DC00959017 /* ShareToolbarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareToolbarViewController.m; sourceTree = "<group>"; };
 		DCD0B0D81AD4214D007C47E4 /* Latitude Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitude Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0DC1AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0DD1AD4214D007C47E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				DCD0B0E81AD4214D007C47E4 /* Images.xcassets */,
 				DCD0B0EA1AD4214D007C47E4 /* LaunchScreen.xib */,
 				DCD0B0DB1AD4214D007C47E4 /* Supporting Files */,
+				DC007F511ADFD5DC00959017 /* ShareToolbarViewController.h */,
+				DC007F521ADFD5DC00959017 /* ShareToolbarViewController.m */,
 			);
 			path = "Latitude Life";
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				DCE13E2B1ADAA9C3000ECD50 /* CollectionViewController.m in Sources */,
 				DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */,
 				DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */,
+				DC007F541ADFD5DC00959017 /* ShareToolbarViewController.m in Sources */,
 				DC007F461ADC020800959017 /* ALView+PureLayout.m in Sources */,
 				DC007F471ADC020800959017 /* NSArray+PureLayout.m in Sources */,
 				DC007F481ADC020800959017 /* NSLayoutConstraint+PureLayout.m in Sources */,
