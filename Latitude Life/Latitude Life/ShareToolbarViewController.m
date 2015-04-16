@@ -34,6 +34,7 @@
 }
 */
 - (IBAction)backPressed:(UIButton *)sender {
+    NSLog(@"back...");
     
 }
 - (IBAction)showTemplates:(UIButton *)sender {
