@@ -9,7 +9,8 @@
 #import "ViewController.h"
 #import "CollectionViewController.h"
 #import "LineLayout.h"
-#import "ShareToolbarViewController.h"
+#import "ShareViewController.h"
+
 
 @interface ViewController ()
 
@@ -97,10 +98,6 @@
     if (!sender.selected) {
         LineLayout* lineLayout = [[LineLayout alloc] init];
         _templates = [[CollectionViewController alloc] initWithCollectionViewLayout:lineLayout];
-        
-        //    [_templates.view setBackgroundColor:[UIColor whiteColor]];
-        //    [_templates.view setFrame:CGRectMake(0, 500, 400, 60)];
-        //    [self presentViewController:_templates animated:YES completion:nil];
         [self.view insertSubview:_templates.collectionView aboveSubview:_picker.view];
         sender.selected = YES;
     } else {
@@ -126,6 +123,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     UIImage *selectedImage = [info valueForKey:UIImagePickerControllerOriginalImage];
     
     [self dismissViewControllerAnimated:YES completion:^{
+        /**
         //show selected image
         [_picker.view removeFromSuperview];
         
@@ -138,16 +136,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         [self.view insertSubview:imgView atIndex:0];
         
         //replace toolbar with shareToolBar
-//        UIView *shareToolbar = [[UIView alloc] initWithFrame:_toolbar.frame];
-//        shareToolbar.backgroundColor = _toolbar.backgroundColor;
-//        [_toolbar removeFromSuperview];
-//        [self.view addSubview:shareToolbar];
-        
-        ShareToolbarViewController *shareToolbar = [self.storyboard instantiateViewControllerWithIdentifier:@"ShareToolbar"];
-        shareToolbar.view.frame = _toolbar.frame;
+        UIViewController *shareController = [self.storyboard instantiateViewControllerWithIdentifier:@"Share"];
+        shareController.view.frame = _toolbar.frame;
         [_toolbar removeFromSuperview];
-        [self.view addSubview:shareToolbar.view];
+        [self.view addSubview:shareController.view];
+         */
         
+        ShareViewController *shareController = [self.storyboard instantiateViewControllerWithIdentifier:@"Share"];
+//        [shareController.img setImage:selectedImage];
+        
+        [self presentViewController:shareController animated:YES completion:^{
+            //do nothing
+            
+        }];
         
     }];
 }
