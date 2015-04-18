@@ -13,6 +13,7 @@
 		DC007F481ADC020800959017 /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = DC007F421ADC020800959017 /* NSLayoutConstraint+PureLayout.m */; };
 		DC2B11AA1AE148AB00DF4C36 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11A91AE148AB00DF4C36 /* ShareViewController.m */; };
 		DC2B11AC1AE1535700DF4C36 /* libPods-pop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B11AB1AE1535700DF4C36 /* libPods-pop.a */; };
+		DC2B11AE1AE27AE200DF4C36 /* t22.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2B11AD1AE27AE200DF4C36 /* t22.png */; };
 		DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0DD1AD4214D007C47E4 /* main.m */; };
 		DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */; };
 		DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E31AD4214D007C47E4 /* ViewController.m */; };
@@ -50,6 +51,7 @@
 		DC2B11A81AE148AB00DF4C36 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
 		DC2B11A91AE148AB00DF4C36 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		DC2B11AB1AE1535700DF4C36 /* libPods-pop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-pop.a"; path = "Pods/../build/Debug-iphoneos/libPods-pop.a"; sourceTree = "<group>"; };
+		DC2B11AD1AE27AE200DF4C36 /* t22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t22.png; sourceTree = "<group>"; };
 		DCD0B0D81AD4214D007C47E4 /* Latitude Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitude Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0DC1AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0DD1AD4214D007C47E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		DCD0B0DA1AD4214D007C47E4 /* Latitude Life */ = {
 			isa = PBXGroup;
 			children = (
+				DC2B11AD1AE27AE200DF4C36 /* t22.png */,
 				DCE13E251ADAA9C3000ECD50 /* CollectionViewController.h */,
 				DCE13E261ADAA9C3000ECD50 /* CollectionViewController.m */,
 				DCE13E271ADAA9C3000ECD50 /* LineLayout.h */,
@@ -280,6 +283,7 @@
 			files = (
 				DCD0B0E71AD4214D007C47E4 /* Main.storyboard in Resources */,
 				DCD0B0EC1AD4214D007C47E4 /* LaunchScreen.xib in Resources */,
+				DC2B11AE1AE27AE200DF4C36 /* t22.png in Resources */,
 				DCD0B0E91AD4214D007C47E4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

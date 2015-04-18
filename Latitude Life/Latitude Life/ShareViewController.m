@@ -11,6 +11,8 @@
 
 @interface ShareViewController ()
 
+@property UIView *sharePopup;
+
 @end
 
 @implementation ShareViewController
@@ -18,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *path = [mainBundle pathForResource:@"t22" ofType:@"png"];
+    
+    
+    UIImage *momentsIcon = [UIImage imageWithContentsOfFile:path];
+    _sharePopup = [[UIView alloc] initWithFrame:CGRectMake(200, self.view.frame.size.height, 0, 0)];
+    
+    UIImageView *moments = [[UIImageView alloc] initWithImage:momentsIcon];
+    
+    [_sharePopup addSubview:moments];
+//    _sharePopup.backgroundColor = [UIColor redColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,22 +51,26 @@
 - (IBAction)share:(UIButton *)sender {
     NSLog(@"share......");
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(200, self.view.frame.size.height, 0, 0)];
-    view.backgroundColor = [UIColor redColor];
-
-    
     if (!sender.selected) {
-                [self.view insertSubview:view atIndex:0];
+        [self.view insertSubview:_sharePopup atIndex:0];
         
-        POPSpringAnimation *basicAnimation = [POPSpringAnimation animation];
-        basicAnimation.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
-        basicAnimation.toValue=[NSValue valueWithCGRect:CGRectMake(0, 500, 375, 55)];
-        basicAnimation.name=@"SomeAnimationNameYouChoose";
-        basicAnimation.delegate=self;
-        [view pop_addAnimation:basicAnimation forKey:@"WhatEverNameYouWant"];
+        POPSpringAnimation *popupAnim = [POPSpringAnimation animation];
+        popupAnim.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
+        popupAnim.toValue=[NSValue valueWithCGRect:CGRectMake(0, 500, 375, 55)];
+        popupAnim.name=@"popupShare";
+        popupAnim.delegate=self;
+        [_sharePopup pop_addAnimation:popupAnim forKey:@"popupShare"];
         sender.selected = YES;
     } else {
-        [view removeFromSuperview];
+        
+        POPSpringAnimation *hideAnim = [POPSpringAnimation animation];
+        hideAnim.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
+        hideAnim.toValue=[NSValue valueWithCGRect:CGRectMake(200, self.view.frame.size.height, 0, 0)];
+        hideAnim.name=@"hideShare";
+        hideAnim.delegate=self;
+        [_sharePopup pop_addAnimation:hideAnim forKey:@"hideShare"];
+        
+        [_sharePopup removeFromSuperview];
         sender.selected = NO;
     }
     
