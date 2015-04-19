@@ -10,9 +10,13 @@
 #import "CollectionViewController.h"
 #import "LineLayout.h"
 #import "ShareViewController.h"
+#import <CoreLocation/CoreLocation.h>
 
 
 @interface ViewController ()
+
+@property (strong, nonatomic) CLLocationManager *manager;
+@property (strong, nonatomic) CLLocation *location;
 
 @property UIImagePickerController *picker;
 @property (weak, nonatomic) IBOutlet UIView *toolbar;
@@ -27,6 +31,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //location
+    _manager = [[CLLocationManager alloc] init];
+    _manager.delegate = self;
+    _manager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
+    if ([_manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
+        [_manager requestWhenInUseAuthorization];
+    }
+    [_manager startUpdatingLocation];
     
     self.modalPresentationStyle=UIModalPresentationOverCurrentContext;
     
@@ -170,5 +185,39 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 //    
 //    [super updateViewConstraints];
 //}
+
+// Location Manager Delegate Methods
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
+{
+    _location = [locations lastObject];
+    NSLog(@"Latitude: %f, Longitude: %f, Altitude: %f, Timestamp: %@", _location.coordinate.latitude, _location.coordinate.longitude, _location.altitude, _location.timestamp);
+    
+    
+    
+}
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+        switch (status) {
+            case kCLAuthorizationStatusNotDetermined:
+                if ([manager respondsToSelector:@selector(requestAlwaysAuthorization)]) {                [manager requestWhenInUseAuthorization];
+                }
+                break;
+            case kCLAuthorizationStatusDenied:
+                //alert user to enable location in settings
+//                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Warning" message:@"Hello" preferredStyle:UIAlertControllerStyleAlert];
+                
+                
+//                UIAlertAction *info = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+//                    //do nothing
+//                }];
+                
+//                [alert addAction:info];
+//                [self presentViewController:alert animated:YES completion:nil];
+                
+                break;
+            default:
+                break;
+        }
+}
 
 @end
