@@ -11,6 +11,8 @@
 #import "LineLayout.h"
 #import "ShareViewController.h"
 #import <CoreLocation/CoreLocation.h>
+#import "TWFlipForwardTransition.h"
+#import "TWFlipBackwardTransition.h"
 
 
 @interface ViewController ()
@@ -36,6 +38,7 @@
     _manager = [[CLLocationManager alloc] init];
     _manager.delegate = self;
     _manager.desiredAccuracy = kCLLocationAccuracyBest;
+//    _manager.distanceFilter = 1000.f;
     
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([_manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
@@ -50,6 +53,7 @@
     _picker.showsCameraControls = NO;
     _picker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
     _picker.view.backgroundColor = [UIColor redColor];
+    _picker.delegate = self;
     
     //add auto layout manually
     _picker.view.frame = CGRectMake(0, 0, 400, 850);
@@ -131,41 +135,59 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)image: (UIImage *) image
+    didFinishSavingWithError: (NSError *) error
+                 contextInfo: (void *) contextInfo{
+    
+}
+
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info{
     NSLog(@"did finish......");
     
     UIImage *selectedImage = [info valueForKey:UIImagePickerControllerOriginalImage];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-        /**
-        //show selected image
-        [_picker.view removeFromSuperview];
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera) {
+        //save to album
+        UIImageWriteToSavedPhotosAlbum(selectedImage, nil, nil, nil);
         
-        UIImageView *imgView = [[UIImageView alloc] initWithImage:selectedImage];
-        
-        imgView.frame = _picker.view.frame;
-        
-        //replace camera with image
-        [_picker removeFromParentViewController];
-        [self.view insertSubview:imgView atIndex:0];
-        
-        //replace toolbar with shareToolBar
-        UIViewController *shareController = [self.storyboard instantiateViewControllerWithIdentifier:@"Share"];
-        shareController.view.frame = _toolbar.frame;
-        [_toolbar removeFromSuperview];
-        [self.view addSubview:shareController.view];
-         */
-        
+        //transition to ShareViewController
         ShareViewController *shareController = [self.storyboard instantiateViewControllerWithIdentifier:@"Share"];
-//        [shareController.img setImage:selectedImage];
+        //        [shareController.img setImage:selectedImage];
         
-        [self presentViewController:shareController animated:YES completion:^{
-            //do nothing
+        [self performSegueWithIdentifier:@"FlipForward" sender:self];
+        
+    } else {
+        [self dismissViewControllerAnimated:YES completion:^{
+            /**
+             //show selected image
+             [_picker.view removeFromSuperview];
+             
+             UIImageView *imgView = [[UIImageView alloc] initWithImage:selectedImage];
+             
+             imgView.frame = _picker.view.frame;
+             
+             //replace camera with image
+             [_picker removeFromParentViewController];
+             [self.view insertSubview:imgView atIndex:0];
+             
+             //replace toolbar with shareToolBar
+             UIViewController *shareController = [self.storyboard instantiateViewControllerWithIdentifier:@"Share"];
+             shareController.view.frame = _toolbar.frame;
+             [_toolbar removeFromSuperview];
+             [self.view addSubview:shareController.view];
+             */
+            
+            ShareViewController *shareController = [self.storyboard instantiateViewControllerWithIdentifier:@"Share"];
+            //        [shareController.img setImage:selectedImage];
+            
+            [self presentViewController:shareController animated:YES completion:^{
+                //do nothing
+                
+            }];
             
         }];
-        
-    }];
+    }
 }
 
 //- (void)updateViewConstraints{
@@ -191,6 +213,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 {
     _location = [locations lastObject];
     NSLog(@"Latitude: %f, Longitude: %f, Altitude: %f, Timestamp: %@", _location.coordinate.latitude, _location.coordinate.longitude, _location.altitude, _location.timestamp);
+    
+    CLGeocoder *geoCoder = [[CLGeocoder alloc] init];
+    [geoCoder reverseGeocodeLocation:_location completionHandler:^(NSArray *placemarks, NSError *error) {
+        CLPlacemark *placeMark = [placemarks firstObject];
+        NSLog(@"Name: %@, Country: %@", placeMark.name, placeMark.country);
+    }];
     
     
     
@@ -219,5 +247,23 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
                 break;
         }
 }
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source{
+     TWFlipForwardTransition *flip = [TWFlipForwardTransition new];
+    
+    return flip;
+}
+
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+             
+             ShareViewController *secVC = (ShareViewController *)segue.destinationViewController;
+             secVC.transitioningDelegate = self;
+             [super prepareForSegue:segue sender:sender];
+}
+
 
 @end

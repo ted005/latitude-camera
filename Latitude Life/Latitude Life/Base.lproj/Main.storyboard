@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -241,6 +242,7 @@
                     </view>
                     <connections>
                         <outlet property="toolbar" destination="ki1-fC-oLt" id="9tT-Fu-2SP"/>
+                        <segue destination="NDT-gn-Zh4" kind="show" identifier="FlipForward" id="IVu-3j-bzM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -263,7 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ESh-Hl-yVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1560" y="243.75"/>
+            <point key="canvasLocation" x="1806" y="276.75"/>
         </scene>
         <!--Share View Controller-->
         <scene sceneID="tHg-Yf-CKh">
@@ -274,6 +276,7 @@
                         <viewControllerLayoutGuide type="bottom" id="18F-9M-gzw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Unt-u7-sw8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKb-n3-6F4" userLabel="toolbar">
@@ -297,6 +300,7 @@
                                         </state>
                                         <connections>
                                             <action selector="back:" destination="NDT-gn-Zh4" eventType="touchUpInside" id="pXE-4s-bFK"/>
+                                            <segue destination="vXZ-lx-hvc" kind="show" id="cnA-Ay-agc"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVd-Rl-ux3">
@@ -336,11 +340,11 @@
                                         <exclude reference="QrA-85-f3L"/>
                                         <exclude reference="0NR-N1-oMD"/>
                                         <exclude reference="Pzg-5J-eiW"/>
+                                        <exclude reference="KWy-ad-Mf6"/>
+                                        <exclude reference="baG-4q-SfC"/>
                                         <exclude reference="5o0-jB-o9g"/>
                                         <exclude reference="QUs-OU-H6I"/>
                                         <exclude reference="tIe-nX-To8"/>
-                                        <exclude reference="KWy-ad-Mf6"/>
-                                        <exclude reference="baG-4q-SfC"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
@@ -356,11 +360,11 @@
                                         <include reference="QrA-85-f3L"/>
                                         <include reference="0NR-N1-oMD"/>
                                         <include reference="Pzg-5J-eiW"/>
+                                        <include reference="KWy-ad-Mf6"/>
+                                        <include reference="baG-4q-SfC"/>
                                         <include reference="5o0-jB-o9g"/>
                                         <include reference="QUs-OU-H6I"/>
                                         <include reference="tIe-nX-To8"/>
-                                        <include reference="KWy-ad-Mf6"/>
-                                        <include reference="baG-4q-SfC"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -390,13 +394,13 @@
                                 <exclude reference="xN1-iN-Whx"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="5sU-Un-RE2"/>
                                 <exclude reference="Tvc-as-DRt"/>
                                 <exclude reference="avq-ZN-4QF"/>
                                 <exclude reference="nPy-B4-Rmc"/>
                                 <exclude reference="PLp-0n-J9K"/>
                                 <exclude reference="UHs-sp-n2J"/>
                                 <exclude reference="zWY-Ic-93b"/>
-                                <exclude reference="5sU-Un-RE2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -405,13 +409,13 @@
                                 <include reference="xN1-iN-Whx"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="5sU-Un-RE2"/>
                                 <include reference="Tvc-as-DRt"/>
                                 <include reference="avq-ZN-4QF"/>
                                 <include reference="nPy-B4-Rmc"/>
                                 <include reference="PLp-0n-J9K"/>
                                 <include reference="UHs-sp-n2J"/>
                                 <include reference="zWY-Ic-93b"/>
-                                <include reference="5sU-Un-RE2"/>
                             </mask>
                         </variation>
                     </view>
@@ -421,7 +425,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5d-Ec-uTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919.5" y="312"/>
+            <point key="canvasLocation" x="1045.5" y="330"/>
         </scene>
     </scenes>
     <resources>

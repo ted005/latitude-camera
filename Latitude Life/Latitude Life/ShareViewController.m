@@ -8,6 +8,8 @@
 
 #import "ShareViewController.h"
 #import <pop/POP.h>
+#import "ViewController.h"
+#import "TWFlipBackwardTransition.h"
 
 @interface ShareViewController ()
 
@@ -77,11 +79,33 @@
     
 }
 - (IBAction)back:(UIButton *)sender {
-    NSLog(@"back......");
-    [self dismissViewControllerAnimated:YES completion:^{
-        //
-    }];
+    //use storyboard seque instead
     
+//    NSLog(@"back......");
+//    [self dismissViewControllerAnimated:YES completion:^{
+//        //
+//    }];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    ViewController *secVC = (ViewController *)segue.destinationViewController;
+    secVC.transitioningDelegate = self;
+    [super prepareForSegue:segue sender:sender];
+}
+
+- (id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed{
+    TWFlipBackwardTransition *flip = [TWFlipBackwardTransition new];
+    return flip;
+    
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source{
+    TWFlipBackwardTransition *flip = [TWFlipBackwardTransition new];
+    return flip;
 }
 
 @end

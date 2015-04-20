@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ShareViewController : UIViewController
+@interface ShareViewController : UIViewController<UIViewControllerTransitioningDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *img;
 
 

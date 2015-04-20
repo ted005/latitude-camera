@@ -14,6 +14,8 @@
 		DC2B11AA1AE148AB00DF4C36 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11A91AE148AB00DF4C36 /* ShareViewController.m */; };
 		DC2B11AC1AE1535700DF4C36 /* libPods-pop.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B11AB1AE1535700DF4C36 /* libPods-pop.a */; };
 		DC2B11AE1AE27AE200DF4C36 /* t22.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2B11AD1AE27AE200DF4C36 /* t22.png */; };
+		DC2B11B11AE5264500DF4C36 /* TWFlipForwardTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11B01AE5264500DF4C36 /* TWFlipForwardTransition.m */; };
+		DC2B11B41AE531BC00DF4C36 /* TWFlipBackwardTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11B31AE531BC00DF4C36 /* TWFlipBackwardTransition.m */; };
 		DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0DD1AD4214D007C47E4 /* main.m */; };
 		DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */; };
 		DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E31AD4214D007C47E4 /* ViewController.m */; };
@@ -52,6 +54,10 @@
 		DC2B11A91AE148AB00DF4C36 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		DC2B11AB1AE1535700DF4C36 /* libPods-pop.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-pop.a"; path = "Pods/../build/Debug-iphoneos/libPods-pop.a"; sourceTree = "<group>"; };
 		DC2B11AD1AE27AE200DF4C36 /* t22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = t22.png; sourceTree = "<group>"; };
+		DC2B11AF1AE5264500DF4C36 /* TWFlipForwardTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWFlipForwardTransition.h; sourceTree = "<group>"; };
+		DC2B11B01AE5264500DF4C36 /* TWFlipForwardTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWFlipForwardTransition.m; sourceTree = "<group>"; };
+		DC2B11B21AE531BC00DF4C36 /* TWFlipBackwardTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWFlipBackwardTransition.h; sourceTree = "<group>"; };
+		DC2B11B31AE531BC00DF4C36 /* TWFlipBackwardTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWFlipBackwardTransition.m; sourceTree = "<group>"; };
 		DCD0B0D81AD4214D007C47E4 /* Latitude Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitude Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0DC1AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0DD1AD4214D007C47E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +175,10 @@
 				DCD0B0DB1AD4214D007C47E4 /* Supporting Files */,
 				DC2B11A81AE148AB00DF4C36 /* ShareViewController.h */,
 				DC2B11A91AE148AB00DF4C36 /* ShareViewController.m */,
+				DC2B11AF1AE5264500DF4C36 /* TWFlipForwardTransition.h */,
+				DC2B11B01AE5264500DF4C36 /* TWFlipForwardTransition.m */,
+				DC2B11B21AE531BC00DF4C36 /* TWFlipBackwardTransition.h */,
+				DC2B11B31AE531BC00DF4C36 /* TWFlipBackwardTransition.m */,
 			);
 			path = "Latitude Life";
 			sourceTree = "<group>";
@@ -336,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE13E2B1ADAA9C3000ECD50 /* CollectionViewController.m in Sources */,
+				DC2B11B41AE531BC00DF4C36 /* TWFlipBackwardTransition.m in Sources */,
 				DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */,
 				DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */,
 				DC007F461ADC020800959017 /* ALView+PureLayout.m in Sources */,
@@ -344,6 +355,7 @@
 				DCE13E2C1ADAA9C3000ECD50 /* LineLayout.m in Sources */,
 				DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */,
 				DC2B11AA1AE148AB00DF4C36 /* ShareViewController.m in Sources */,
+				DC2B11B11AE5264500DF4C36 /* TWFlipForwardTransition.m in Sources */,
 				DCE13E2D1ADAA9C3000ECD50 /* TemplateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
