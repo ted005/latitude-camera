@@ -13,7 +13,7 @@
 @implementation TWFlipForwardTransition
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
-    return 0.8f;
+    return 0.6f;
 }
 
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext{
@@ -59,7 +59,7 @@
     
     
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseInOut  animations:^{
         
         //旋转fromView 90度
         fromView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);

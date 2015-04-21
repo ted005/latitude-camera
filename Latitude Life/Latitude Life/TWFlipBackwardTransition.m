@@ -14,7 +14,7 @@
 
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext{
     
-    return 0.8f;
+    return 0.6f;
 }
 
 
@@ -47,7 +47,7 @@
     toView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0.0, 1.0, 0.0);
     
     
-    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+    [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         
         //旋转fromView 90度
         toView.layer.transform = CATransform3DMakeRotation(0, 0, 1.0, 0);
