@@ -16,6 +16,7 @@
 		DC2B11AE1AE27AE200DF4C36 /* t22.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2B11AD1AE27AE200DF4C36 /* t22.png */; };
 		DC2B11B11AE5264500DF4C36 /* TWFlipForwardTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11B01AE5264500DF4C36 /* TWFlipForwardTransition.m */; };
 		DC2B11B41AE531BC00DF4C36 /* TWFlipBackwardTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11B31AE531BC00DF4C36 /* TWFlipBackwardTransition.m */; };
+		DC2B11B61AE68C0700DF4C36 /* libPods-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B11B51AE68C0700DF4C36 /* libPods-AFNetworking.a */; };
 		DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0DD1AD4214D007C47E4 /* main.m */; };
 		DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */; };
 		DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E31AD4214D007C47E4 /* ViewController.m */; };
@@ -58,6 +59,7 @@
 		DC2B11B01AE5264500DF4C36 /* TWFlipForwardTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWFlipForwardTransition.m; sourceTree = "<group>"; };
 		DC2B11B21AE531BC00DF4C36 /* TWFlipBackwardTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWFlipBackwardTransition.h; sourceTree = "<group>"; };
 		DC2B11B31AE531BC00DF4C36 /* TWFlipBackwardTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWFlipBackwardTransition.m; sourceTree = "<group>"; };
+		DC2B11B51AE68C0700DF4C36 /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AFNetworking.a"; path = "Pods/../build/Debug-iphoneos/libPods-AFNetworking.a"; sourceTree = "<group>"; };
 		DCD0B0D81AD4214D007C47E4 /* Latitude Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitude Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0DC1AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0DD1AD4214D007C47E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2B11B61AE68C0700DF4C36 /* libPods-AFNetworking.a in Frameworks */,
 				DC2B11AC1AE1535700DF4C36 /* libPods-pop.a in Frameworks */,
 				21024DF83A78C971BFC182D9 /* libPods.a in Frameworks */,
 			);
@@ -103,6 +106,7 @@
 		686E1D3C8D3F6D0D114A8303 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DC2B11B51AE68C0700DF4C36 /* libPods-AFNetworking.a */,
 				DC2B11AB1AE1535700DF4C36 /* libPods-pop.a */,
 				FFF1202BE885B65F1357756C /* libPods.a */,
 			);

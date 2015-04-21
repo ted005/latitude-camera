@@ -13,12 +13,16 @@
 #import <CoreLocation/CoreLocation.h>
 #import "TWFlipForwardTransition.h"
 #import "TWFlipBackwardTransition.h"
+#import <AFHTTPRequestOperationManager.h>
+#import <AFHTTPRequestOperation.h>
 
 
 @interface ViewController ()
 
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) CLLocation *location;
+
+@property (strong, nonatomic) AFHTTPRequestOperationManager *opManager;
 
 @property UIImagePickerController *picker;
 @property (weak, nonatomic) IBOutlet UIView *toolbar;
@@ -220,7 +224,36 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         NSLog(@"Name: %@, Country: %@", placeMark.name, placeMark.country);
     }];
     
-    
+    //AFNetWorking GET request
+    if (_opManager == nil) {
+        _opManager = [AFHTTPRequestOperationManager manager];
+        _opManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        [_opManager GET:@"http://api.openweathermap.org/data/2.5/weather"
+               parameters:@{@"lat": @35.f, @"lon" : @139.f}
+               success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                   NSDictionary *resp = (NSDictionary *)responseObject;
+                   NSArray *weatherArr = (NSArray *)[resp valueForKey:@"weather"];
+                   NSDictionary *weatherEle = (NSDictionary *)[weatherArr firstObject];
+                   NSString *weather = (NSString *)[weatherEle valueForKey:@"main"];
+                   NSLog(@"Weather: %@", weather);
+               }
+               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                   NSLog(@"Error: %@", error);
+                   //alert user
+                   UIAlertController *alert = [UIAlertController
+                                                    alertControllerWithTitle:@"Warning" message:@"Weather currently unavailable" preferredStyle:UIAlertControllerStyleAlert];
+                   UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                       //do nothing
+                   }];
+                   
+                   [alert addAction:action];
+                   [self presentViewController:alert animated:YES completion:^{
+                       //do nothing
+                   }];
+                   
+               }];
+
+    }
     
 }
 
