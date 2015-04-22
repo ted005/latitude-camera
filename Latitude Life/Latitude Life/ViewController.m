@@ -15,12 +15,15 @@
 #import "TWFlipBackwardTransition.h"
 #import <AFHTTPRequestOperationManager.h>
 #import <AFHTTPRequestOperation.h>
+#import "TWSimpleTemplateView.h"
 
 
 @interface ViewController ()
 
 @property (strong, nonatomic) CLLocationManager *manager;
 @property (strong, nonatomic) CLLocation *location;
+
+@property TWSimpleTemplateView *simpleTemplate;
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager *opManager;
 
@@ -42,7 +45,7 @@
     _manager = [[CLLocationManager alloc] init];
     _manager.delegate = self;
     _manager.desiredAccuracy = kCLLocationAccuracyBest;
-//    _manager.distanceFilter = 1000.f;
+    _manager.distanceFilter = 20.f;
     
     // Check for iOS 8. Without this guard the code will crash with "unknown selector" on iOS 7.
     if ([_manager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
@@ -60,7 +63,14 @@
     _picker.delegate = self;
     
     //add auto layout manually
-    _picker.view.frame = CGRectMake(0, 0, 400, 850);
+    _picker.view.frame = CGRectMake(0, 0, 400, 900);
+    
+    //camera overlay
+    _simpleTemplate = [[[NSBundle mainBundle] loadNibNamed:@"TWSimpleTemplateView" owner:nil options:nil] firstObject];
+    [_simpleTemplate setFrame:CGRectMake(0, 450, 400, 100)];
+    _simpleTemplate.backgroundColor = [UIColor clearColor];
+    _picker.cameraOverlayView = _simpleTemplate;
+    
     
     [self.view insertSubview:_picker.view atIndex:0];
     [self.view setBackgroundColor:[UIColor greenColor]];
@@ -224,6 +234,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
         NSLog(@"Name: %@, Country: %@", placeMark.name, placeMark.country);
     }];
     
+    //update camera overlay
+    UILabel *lon = (UILabel *)[_simpleTemplate viewWithTag:1];
+    UILabel *lat = (UILabel *)[_simpleTemplate viewWithTag:2];
+    UILabel *weatherLabel = (UILabel *)[_simpleTemplate viewWithTag:3];
+    
+    [lon setText:[NSString stringWithFormat:@"%.2f", _location.coordinate.longitude]];
+    [lat setText:[NSString stringWithFormat:@"%.2f", _location.coordinate.latitude]];
+    
+    
     //AFNetWorking GET request
     if (_opManager == nil) {
         _opManager = [AFHTTPRequestOperationManager manager];
@@ -236,9 +255,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
                    NSDictionary *weatherEle = (NSDictionary *)[weatherArr firstObject];
                    NSString *weather = (NSString *)[weatherEle valueForKey:@"main"];
                    NSLog(@"Weather: %@", weather);
+                   [weatherLabel setText:weather];
                }
                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                    NSLog(@"Error: %@", error);
+                   
+                   //hide weather label
+                   weatherLabel.hidden = YES;
+                   
                    //alert user
                    UIAlertController *alert = [UIAlertController
                                                     alertControllerWithTitle:@"Warning" message:@"Weather currently unavailable" preferredStyle:UIAlertControllerStyleAlert];

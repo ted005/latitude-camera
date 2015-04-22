@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="epC-mq-bkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5kE-ku-SPS">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjP-pf-Kou">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4QS-La-QsZ">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="4QS-La-QsZ" firstAttribute="top" secondItem="5kE-ku-SPS" secondAttribute="bottom" constant="11" id="1yY-1O-gmF">
+                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                </constraint>
+                <constraint firstItem="5kE-ku-SPS" firstAttribute="top" secondItem="OjP-pf-Kou" secondAttribute="bottom" constant="10" id="GRu-1R-pcJ">
+                    <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                </constraint>
+                <constraint firstItem="5kE-ku-SPS" firstAttribute="leading" secondItem="4QS-La-QsZ" secondAttribute="leading" id="aqg-hk-omv"/>
+                <constraint firstItem="5kE-ku-SPS" firstAttribute="leading" secondItem="epC-mq-bkT" secondAttribute="leading" constant="67" id="caT-AQ-EZu">
+                    <variation key="heightClass=regular-widthClass=compact" constant="35"/>
+                </constraint>
+                <constraint firstAttribute="centerY" secondItem="5kE-ku-SPS" secondAttribute="centerY" id="grk-Sq-9ls"/>
+                <constraint firstItem="OjP-pf-Kou" firstAttribute="leading" secondItem="5kE-ku-SPS" secondAttribute="leading" id="j3u-rI-wm6"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="5kE-ku-SPS"/>
+                    <exclude reference="OjP-pf-Kou"/>
+                    <exclude reference="4QS-La-QsZ"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="j3u-rI-wm6"/>
+                    <exclude reference="GRu-1R-pcJ"/>
+                    <exclude reference="aqg-hk-omv"/>
+                    <exclude reference="caT-AQ-EZu"/>
+                    <exclude reference="grk-Sq-9ls"/>
+                    <exclude reference="1yY-1O-gmF"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="5kE-ku-SPS"/>
+                    <include reference="OjP-pf-Kou"/>
+                    <include reference="4QS-La-QsZ"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="j3u-rI-wm6"/>
+                    <include reference="GRu-1R-pcJ"/>
+                    <include reference="aqg-hk-omv"/>
+                    <include reference="caT-AQ-EZu"/>
+                    <include reference="grk-Sq-9ls"/>
+                    <include reference="1yY-1O-gmF"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="229" y="114"/>
+        </view>
+    </objects>
+</document>
