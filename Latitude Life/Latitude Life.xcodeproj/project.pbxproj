@@ -19,6 +19,8 @@
 		DC2B11B61AE68C0700DF4C36 /* libPods-AFNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DC2B11B51AE68C0700DF4C36 /* libPods-AFNetworking.a */; };
 		DC2B11B81AE7BF7500DF4C36 /* TWSimpleTemplateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC2B11B71AE7BF7500DF4C36 /* TWSimpleTemplateView.xib */; };
 		DC2B11BB1AE7BF9D00DF4C36 /* TWSimpleTemplateView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2B11BA1AE7BF9D00DF4C36 /* TWSimpleTemplateView.m */; };
+		DC5B7C8A1AE92D1200D7145D /* TWSimpleTemplateView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC5B7C891AE92D1200D7145D /* TWSimpleTemplateView2.xib */; };
+		DC5B7C8D1AE92D3C00D7145D /* TWSimpleTemplateView2.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5B7C8C1AE92D3C00D7145D /* TWSimpleTemplateView2.m */; };
 		DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0DD1AD4214D007C47E4 /* main.m */; };
 		DCD0B0E11AD4214D007C47E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E01AD4214D007C47E4 /* AppDelegate.m */; };
 		DCD0B0E41AD4214D007C47E4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCD0B0E31AD4214D007C47E4 /* ViewController.m */; };
@@ -65,6 +67,9 @@
 		DC2B11B71AE7BF7500DF4C36 /* TWSimpleTemplateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWSimpleTemplateView.xib; sourceTree = "<group>"; };
 		DC2B11B91AE7BF9D00DF4C36 /* TWSimpleTemplateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSimpleTemplateView.h; sourceTree = "<group>"; };
 		DC2B11BA1AE7BF9D00DF4C36 /* TWSimpleTemplateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSimpleTemplateView.m; sourceTree = "<group>"; };
+		DC5B7C891AE92D1200D7145D /* TWSimpleTemplateView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TWSimpleTemplateView2.xib; sourceTree = "<group>"; };
+		DC5B7C8B1AE92D3C00D7145D /* TWSimpleTemplateView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWSimpleTemplateView2.h; sourceTree = "<group>"; };
+		DC5B7C8C1AE92D3C00D7145D /* TWSimpleTemplateView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWSimpleTemplateView2.m; sourceTree = "<group>"; };
 		DCD0B0D81AD4214D007C47E4 /* Latitude Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Latitude Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCD0B0DC1AD4214D007C47E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCD0B0DD1AD4214D007C47E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -191,6 +196,9 @@
 				DC2B11B71AE7BF7500DF4C36 /* TWSimpleTemplateView.xib */,
 				DC2B11B91AE7BF9D00DF4C36 /* TWSimpleTemplateView.h */,
 				DC2B11BA1AE7BF9D00DF4C36 /* TWSimpleTemplateView.m */,
+				DC5B7C891AE92D1200D7145D /* TWSimpleTemplateView2.xib */,
+				DC5B7C8B1AE92D3C00D7145D /* TWSimpleTemplateView2.h */,
+				DC5B7C8C1AE92D3C00D7145D /* TWSimpleTemplateView2.m */,
 			);
 			path = "Latitude Life";
 			sourceTree = "<group>";
@@ -305,6 +313,7 @@
 			files = (
 				DCD0B0E71AD4214D007C47E4 /* Main.storyboard in Resources */,
 				DCD0B0EC1AD4214D007C47E4 /* LaunchScreen.xib in Resources */,
+				DC5B7C8A1AE92D1200D7145D /* TWSimpleTemplateView2.xib in Resources */,
 				DC2B11AE1AE27AE200DF4C36 /* t22.png in Resources */,
 				DC2B11B81AE7BF7500DF4C36 /* TWSimpleTemplateView.xib in Resources */,
 				DCD0B0E91AD4214D007C47E4 /* Images.xcassets in Resources */,
@@ -370,6 +379,7 @@
 				DCD0B0DE1AD4214D007C47E4 /* main.m in Sources */,
 				DC2B11AA1AE148AB00DF4C36 /* ShareViewController.m in Sources */,
 				DC2B11B11AE5264500DF4C36 /* TWFlipForwardTransition.m in Sources */,
+				DC5B7C8D1AE92D3C00D7145D /* TWSimpleTemplateView2.m in Sources */,
 				DCE13E2D1ADAA9C3000ECD50 /* TemplateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
