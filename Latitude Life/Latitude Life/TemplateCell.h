@@ -5,4 +5,6 @@
 
 @property (strong, nonatomic) UILabel* label;
 
+@property (strong, nonatomic) UIButton* button;
+
 @end
