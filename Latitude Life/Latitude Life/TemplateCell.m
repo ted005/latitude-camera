@@ -13,6 +13,7 @@
 //        self.label.backgroundColor = [UIColor clearColor];
 //        self.label.textColor = [UIColor blackColor];
 
+        _button.backgroundColor = [UIColor clearColor];
         [self.contentView addSubview:_button];
         
 //        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"icon.png"]];

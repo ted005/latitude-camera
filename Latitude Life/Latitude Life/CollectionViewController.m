@@ -26,8 +26,19 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 {
     Cell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"MY_CELL" forIndexPath:indexPath];
-    cell.label.text = [NSString stringWithFormat:@"%@", [_templateCellTexts objectAtIndex:indexPath.row]];
+    [cell.button setTitle:[NSString stringWithFormat:@"%@", [_templateCellTexts objectAtIndex:indexPath.row]] forState:UIControlStateNormal];
+    
+    //add action for button
+    [cell.button addTarget:self action:@selector(btnPressed:) forControlEvents:UIControlEventTouchUpInside];
+    //to distinguish each button
+    [cell.button setTag:indexPath.row];
+    
     return cell;
+}
+
+-(void)btnPressed:(id)sender{
+    UIButton* btn = (UIButton*)sender;
+    NSLog(@"%ld is pressed.", (long)btn.tag);
 }
 
 -(void)initTemoplateCellTextsArray{
