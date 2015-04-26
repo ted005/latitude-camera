@@ -36,9 +36,18 @@
     return cell;
 }
 
+
 -(void)btnPressed:(id)sender{
     UIButton* btn = (UIButton*)sender;
+    UIView *superview = btn.superview.superview.superview.superview;//pickerView
+    UIView *cameraView = [[superview subviews] firstObject];
+    UIImagePickerController* controller = (UIImagePickerController*)[cameraView nextResponder];
+    
+    //change camera overlay view(template)
+    controller.cameraOverlayView = nil;
+    
     NSLog(@"%ld is pressed.", (long)btn.tag);
+    
 }
 
 -(void)initTemoplateCellTextsArray{

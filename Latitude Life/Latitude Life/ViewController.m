@@ -71,7 +71,7 @@
     _simpleTemplate.backgroundColor = [UIColor clearColor];
     _picker.cameraOverlayView = _simpleTemplate;
     
-    
+    _picker.view.tag = 1069;
     [self.view insertSubview:_picker.view atIndex:0];
     [self.view setBackgroundColor:[UIColor greenColor]];
 }
@@ -142,7 +142,6 @@
     }
     
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
