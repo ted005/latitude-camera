@@ -1,6 +1,7 @@
 
 #import "CollectionViewController.h"
 #import "TemplateCell.h"
+#import "TWSimpleTemplateView.h"
 
 @implementation CollectionViewController
 
@@ -45,8 +46,31 @@
     
     //change camera overlay view(template)
     controller.cameraOverlayView = nil;
-    
     NSLog(@"%ld is pressed.", (long)btn.tag);
+    
+    switch (btn.tag) {
+        case 0:
+            _simpleTemplate = [[[NSBundle mainBundle] loadNibNamed:@"TWSimpleTemplateView" owner:nil options:nil] firstObject];
+            [_simpleTemplate setFrame:CGRectMake(0, 450, 400, 100)];
+            _simpleTemplate.backgroundColor = [UIColor clearColor];
+            controller.cameraOverlayView = _simpleTemplate;
+            
+            break;
+        case 1:
+            _simpleTemplate = [[[NSBundle mainBundle] loadNibNamed:@"TWSimpleTemplateView" owner:nil options:nil] firstObject];
+            [_simpleTemplate setFrame:CGRectMake(0, 450, 400, 100)];
+            _simpleTemplate.backgroundColor = [UIColor clearColor];
+            controller.cameraOverlayView = _simpleTemplate;
+            break;
+        
+            
+        default:
+            break;
+    }
+    
+    //dismiss template view
+    [self.collectionView removeFromSuperview];
+    //TODO template button selected = No;
     
 }
 
