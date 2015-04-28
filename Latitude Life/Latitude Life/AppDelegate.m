@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
+    _adView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 568)];
+    [_adView setImage:[UIImage imageNamed:@"t22.png"]];
+    
+    [self.window addSubview:_adView];
+    [self.window bringSubviewToFront:_adView];
+    
+    [NSThread sleepForTimeInterval:2.0];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ViewController *mainViewController = [storyboard instantiateInitialViewController];
+    self.window.rootViewController = mainViewController;
     return YES;
 }
 
