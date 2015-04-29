@@ -10,6 +10,7 @@
 #import <pop/POP.h>
 #import "ViewController.h"
 #import "TWFlipBackwardTransition.h"
+#import "UMSocial.h"
 
 @interface ShareViewController ()
 
@@ -54,14 +55,22 @@
     NSLog(@"share......");
     
     if (!sender.selected) {
-        [self.view insertSubview:_sharePopup atIndex:0];
+//        [self.view insertSubview:_sharePopup atIndex:0];
+//        
+//        POPSpringAnimation *popupAnim = [POPSpringAnimation animation];
+//        popupAnim.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
+//        popupAnim.toValue=[NSValue valueWithCGRect:CGRectMake(0, 500, 375, 55)];
+//        popupAnim.name=@"popupShare";
+//        popupAnim.delegate=self;
+//        [_sharePopup pop_addAnimation:popupAnim forKey:@"popupShare"];
         
-        POPSpringAnimation *popupAnim = [POPSpringAnimation animation];
-        popupAnim.property = [POPAnimatableProperty propertyWithName:kPOPViewFrame];
-        popupAnim.toValue=[NSValue valueWithCGRect:CGRectMake(0, 500, 375, 55)];
-        popupAnim.name=@"popupShare";
-        popupAnim.delegate=self;
-        [_sharePopup pop_addAnimation:popupAnim forKey:@"popupShare"];
+        [UMSocialSnsService presentSnsIconSheetView:self
+                                             appKey:@"5540d164e0f55a82850033c2"
+                                          shareText:@"Hello"
+                                         shareImage:[UIImage imageNamed:@"icon.png"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQQ,nil]
+                                           delegate:nil];
+        
         sender.selected = YES;
     } else {
         
