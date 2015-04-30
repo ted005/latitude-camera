@@ -67,8 +67,8 @@
         [UMSocialSnsService presentSnsIconSheetView:self
                                              appKey:@"5540d164e0f55a82850033c2"
                                           shareText:@"Hello"
-                                         shareImage:[UIImage imageNamed:@"icon.png"]
-                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToTencent,UMShareToQQ,nil]
+                                         shareImage:[UIImage imageNamed:@"t22.png"]
+                                    shareToSnsNames:[NSArray arrayWithObjects:UMShareToSina,UMShareToInstagram,nil]
                                            delegate:nil];
         
         sender.selected = YES;
